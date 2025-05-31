@@ -108,7 +108,7 @@ const selectColor = (color: string) => {
 }
 
 .nav-item.active {
-  background-color: #e0e0e0;
+  background-color: rgba(78, 208, 254, 0.6);
   font-weight: bold;
 }
 </style>

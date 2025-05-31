@@ -93,7 +93,7 @@ html, body {
   padding:0 2rem 0 2rem;
   height: 3rem;
   backdrop-filter: blur(10px);
-  background: rgba(78, 208, 254, 0.06);
+  background: rgba(0, 85, 47, 0.06);
   box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
@@ -139,7 +139,6 @@ html, body {
 .preview-section {
   width: 50%;
   border-left: 1px solid #eee;
-  
 }
 
 .dropdown {
