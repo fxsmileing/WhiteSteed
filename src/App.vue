@@ -83,7 +83,6 @@ html, body {
   font-family: Arial, sans-serif;
 }
 .resume-builder {
-  height: 100vh;
   display: flex;
   flex-direction: column;
 }
@@ -92,14 +91,14 @@ html, body {
   display: flex;
   align-items: center;
   padding:0 2rem 0 2rem;
-  border-bottom: 1px solid #eee;
   height: 3rem;
+  backdrop-filter: blur(10px);
+  background: rgba(78, 208, 254, 0.06);
   box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  background: white;
   z-index: 100;
 }
 
@@ -128,7 +127,7 @@ html, body {
 .side-nav {
   width: 250px;
   border-right: 1px solid #eee;
-  background: #ececec;
+  background-image: linear-gradient(to bottom, rgba(78, 208, 254, 0.3), rgba(185, 0, 186, 0.4));
 }
 
 .form-section {
@@ -140,7 +139,7 @@ html, body {
 .preview-section {
   width: 50%;
   border-left: 1px solid #eee;
-  overflow-y: auto;
+  
 }
 
 .dropdown {
