@@ -29,6 +29,7 @@ export interface ResumeState {
     achievement: string;
   }>;
   evaluation: string;
+  resumeName: string;
 }
 
 export const useResumeStore = defineStore('resume', {
@@ -60,7 +61,8 @@ export const useResumeStore = defineStore('resume', {
       description: '',
       achievement: ''
     }],
-    evaluation: ''
+    evaluation: '',
+    resumeName: '未命名简历'
   }),
 
   actions: {
@@ -81,6 +83,9 @@ export const useResumeStore = defineStore('resume', {
     },
     updateEvaluation(evaluation: string) {
       this.evaluation = evaluation
+    },
+    updateResumeName(name: string) {
+      this.resumeName = name
     },
     resetAll() {
       this.$patch({
@@ -111,7 +116,8 @@ export const useResumeStore = defineStore('resume', {
           description: '',
           achievement: ''
         }],
-        evaluation: ''
+        evaluation: '',
+        resumeName: '未命名简历'
       })
     }
   }
