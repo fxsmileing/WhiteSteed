@@ -6,8 +6,13 @@ export interface ResumeState {
     name: string;
     gender: string;
     age: string;
+    nation: string;
+    nativePlace: string;
+    political: string;
+    educationLevel: string;
     phone: string;
     email: string;
+    workYears: string;
   };
   jobIntention: {
     position: string;
@@ -39,8 +44,13 @@ export const useResumeStore = defineStore('resume', {
       name: '',
       gender: '',
       age: '',
+      nation: '',
+      nativePlace: '',
+      political: '',
+      educationLevel: '',
       phone: '',
-      email: ''
+      email: '',
+      workYears: ''
     },
     jobIntention: {
       position: '',
@@ -94,8 +104,13 @@ export const useResumeStore = defineStore('resume', {
           name: '',
           gender: '',
           age: '',
+          nation: '',
+          nativePlace: '',
+          political: '',
+          educationLevel: '',
           phone: '',
-          email: ''
+          email: '',
+          workYears: ''
         },
         jobIntention: {
           position: '',

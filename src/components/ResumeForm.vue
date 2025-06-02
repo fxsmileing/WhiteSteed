@@ -24,6 +24,22 @@
         <input v-model="store.basicInfo.age" type="number" name="Age" min="18" max="100" />
       </div>
       <div class="form-group">
+        <label>民族</label>
+        <input v-model="store.basicInfo.nation" type="text" />
+      </div>
+      <div class="form-group">
+        <label>籍贯</label>
+        <input v-model="store.basicInfo.nativePlace" type="text" />
+      </div>
+      <div class="form-group">
+        <label>政治面貌</label>
+        <input v-model="store.basicInfo.political" type="text" />
+      </div>
+      <div class="form-group">
+        <label>学历</label>
+        <input v-model="store.basicInfo.educationLevel" type="text" />
+      </div>
+      <div class="form-group">
         <label>手机</label>
         <input v-model="store.basicInfo.phone" type="tel" name="usrphone" placeholder="请输入有效的手机号码" />
       </div>
@@ -31,6 +47,10 @@
         <label>邮箱</label>
         <input v-model="store.basicInfo.email" type="text" placeholder="请输入有效的邮箱地址"/>
       </div>
+       <div class="form-group">
+      <label>工作年限</label>
+      <input v-model="store.basicInfo.workYears" type="number" min="0" max="80" placeholder="请输入工作年限" />
+    </div>
     </section>
 
     <section v-show="store.currentSection === 'intention'" class="form-section">
@@ -114,6 +134,7 @@
         <textarea v-model="store.evaluation" rows="8" placeholder="请进行自我评价"></textarea>
       </div>
     </section>
+   
   </form>
 </template>
 

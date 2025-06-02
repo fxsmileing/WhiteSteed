@@ -2,17 +2,22 @@
   <div class="resume-preview">
     <div class="preview-content">
       <div class="resume-title">
-        <h1><label for="">{{ store.basicInfo.name || '未填写' }}</label>简历</h1> 
+        <h1><span for="">{{ store.basicInfo.name || '未填写' }}</span><span>个人简历</span></h1>
       </div>
 
       <section class="preview-section">
         <h3>基本信息</h3>
-        <div class="info-content">
+        <div class="info-content basicInfo">
           <div class="info-item">姓名：{{ store.basicInfo.name || '未填写' }}</div>
           <div class="info-item">性别：{{ store.basicInfo.gender || '未填写' }}</div>
           <div class="info-item">年龄：{{ store.basicInfo.age || '未填写' }}</div>
+          <div class="info-item">民族：{{ store.basicInfo.nation || '未填写' }}</div>
+          <div class="info-item">籍贯：{{ store.basicInfo.nativePlace || '未填写' }}</div>
+          <div class="info-item">政治面貌：{{ store.basicInfo.political || '未填写' }}</div>
+          <div class="info-item">学历：{{ store.basicInfo.educationLevel || '未填写' }}</div>
           <div class="info-item">手机：{{ store.basicInfo.phone || '未填写' }}</div>
           <div class="info-item">邮箱：{{ store.basicInfo.email || '未填写' }}</div>
+          <div class="info-item">工作年限：{{ store.basicInfo.workYears || '未填写' }}年</div>
         </div>
       </section>
 
