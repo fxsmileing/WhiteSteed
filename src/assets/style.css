@@ -313,21 +313,33 @@ hr{display:none;}
 }
   }
 .app-footer{
-width: 100%;
+  width: 100%;
+  display: block;
   position: fixed;
-  z-index: 999;
-  background-color: #f8f8f8;
+  z-index: 9999;
+  background-color:rgba(0, 0, 0,0.1);
+   backdrop-filter: blur(10px);
   padding: 0.5rem 0;
   bottom: 0;
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* 上阴影 */
- 
-  .footer-actions{ 
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.3); /* 上阴影 */
+  .footer-actions{
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
     button{
       flex: 1;
+      background:rgba(0,0,0,0)!important;
+      color: #333;
+    }
+    button:nth-child(2){
+      border: 1px solid #666;
+      border-bottom: none;
+      border-top: none;
+    }
+    button:last-child{
+     border: none;
+      cursor: pointer;
     }
   }
 }
