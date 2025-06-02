@@ -32,6 +32,13 @@
         </div>
       </div>
     </div>
+    <footer class="app-footer">
+      <div class="footer-actions">
+        <button class="export-btn" @click="exportPDF">导出PDF</button>
+        <button class="export-btn export-md" @click="exportMD">导出MD</button>
+        <button @click="resetForm">重置</button>
+      </div>
+    </footer>
   </div>
 </template>
 

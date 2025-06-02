@@ -1,4 +1,7 @@
 /* 页面基础样式 */
+* {
+  box-sizing: border-box;
+}
 html, body {
   margin: 0;
   padding: 0;
@@ -91,7 +94,7 @@ html, body {
 .side-nav {
   width: 250px;
   border-right: 1px solid #eee;
-  background-image: linear-gradient(to right, rgb(245, 245, 245), 95%, rgb(230, 230, 230));
+  background-image: linear-gradient(to right, rgb(245, 245, 245), 97%, rgb(230, 230, 230));
 }
 
 /* 表单区域样式 */
@@ -108,37 +111,6 @@ html, body {
   border-left: 1px solid #eee;
 }
 
-/* 下拉菜单样式 */
-.dropdown-menu {
-  width: 6rem;
-  display: none;
-  position: absolute;
-  top: 100%;
-  right: 0;
-  background: white;
-  border: 1px solid #eee;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  z-index: 1000;
-}
-
-.dropdown-menu button {
-  display: block;
-  width: 6rem;
-  padding: 0.5rem 1rem;
-  text-align: center;
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.dropdown-menu button:hover {
-  background-color: #f5f5f5;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
 
 /* 弹窗遮罩和内容样式 */
 .modal-mask {
@@ -232,7 +204,7 @@ html, body {
   font-weight: bold;
 }
 
-/* ResumeForm 相关样式 */
+/*ResumeForm 相关样式 */
 .resume-form {
   max-width: 800px;
   margin: 0 auto;
@@ -288,7 +260,33 @@ textarea {
 }
 
 @media (max-width: 768px) {
-  .side-nav {
+  .side-nav,.resume-preview,.header-actions {
     display: none;
   }
+  .app-header{
+
+    h1{
+      margin: 0 auto;
+      flex:none;
+}
+  }
+.app-footer{
+width: 100%;
+  position: fixed;
+  z-index: 999;
+  background-color: #f8f8f8;
+  padding: 0.5rem 0;
+  bottom: 0;
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1); /* 上阴影 */
+ 
+  .footer-actions{ 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    button{
+      flex: 1;
+    }
+  }
+}
 }
