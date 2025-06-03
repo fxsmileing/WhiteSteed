@@ -372,6 +372,7 @@ textarea {
         border: 1px solid #666;
         border-bottom: none;
         border-top: none;
+        border-radius: 0;
       }
       button:last-child {
         border: none;
