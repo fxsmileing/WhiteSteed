@@ -340,6 +340,7 @@ textarea {
       width: 5rem;
       min-width: 5rem;
       padding: 0;
+      color: rgb(0, 0, 99);
     }
   
   .app-header {
