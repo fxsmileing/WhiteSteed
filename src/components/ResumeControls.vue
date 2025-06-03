@@ -54,7 +54,8 @@ const navItems = [
   { key: 'education', label: '教育背景' },
   { key: 'skills', label: '专业技能' },
   { key: 'projects', label: '项目经验' },
-  { key: 'evaluation', label: '自我评价' }
+  { key: 'evaluation', label: '自我评价' },
+  { key: 'custom', label: '自定义项' },
 ]
 
 const handleNavClick = (key: string) => {

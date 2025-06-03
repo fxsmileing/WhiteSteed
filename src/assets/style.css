@@ -2,15 +2,15 @@
 * {
   box-sizing: border-box;
 }
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
 }
-hr{
+hr {
   border: none;
   border-top: 1px solid #ddd;
-
 }
 /* 根容器 */
 .resume-builder {
@@ -26,7 +26,7 @@ hr{
   height: 3rem;
   justify-content: space-between;
   backdrop-filter: blur(10px);
-  background: rgba(0, 85, 47, 0.06);
+  background: rgba(0, 0, 99, 0.8);
   box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
@@ -48,7 +48,7 @@ hr{
   font-size: 1.5rem;
   display: flex;
   align-items: center;
-  color: #00afd0;
+  color: #fff;
 }
 
 /* 顶部操作按钮区域 */
@@ -73,7 +73,7 @@ hr{
 
 /* 导出MD按钮绿色 */
 .export-md {
-  background-color: #2ecc71!important;
+  background-color: #2ecc71 !important;
 }
 
 /* 重置按钮样式 */
@@ -88,23 +88,28 @@ hr{
 
 /* 主体布局 */
 .app-main {
-   width: 100%;
- background:#989898;
+  width: 100%;
+  background: #999;
   display: flex;
 }
 
 /* 侧边栏样式 */
 .side-nav {
- min-width:10%;
+  max-width: 15%;
   border-right: 1px solid #eee;
-  background-image: linear-gradient(to right, rgb(245, 245, 245), 97%, rgb(230, 230, 230));
+  background-image: linear-gradient(
+    to right,
+    rgb(245, 245, 245),
+    97%,
+    rgb(230, 230, 230)
+  );
 }
 
 /* 表单区域样式 */
 .form-section {
-  min-width: 30%;
-  padding:0 1rem;
-  background:#fff;
+  min-width: 25%;
+  padding: 0 1rem;
+  background: #fff;
 }
 
 /* 预览区域样式 */
@@ -112,34 +117,37 @@ hr{
 .preview-section {
   padding: 1.5rem;
   flex: 1;
-  
 }
-  .preview-content{
-    width: 100%;
-    background:#fff;
- 
- .resume-preview{flex-grow: 1;}
-  .basicInfo{
+.preview-content {
+  width: 100%;
+  background: #fff;
+
+  .resume-preview {
+    flex-grow: 1;
+  }
+  .basicInfo {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
     padding: 1rem 0 0 0;
   }
-  .form-group{
+  .form-group {
     border-bottom: 1px solid #ddd;
-   }
-   .basicInfo div:nth-child(7) {
-      grid-column: span 2;
-    }
+  }
+  .basicInfo div:nth-child(7) {
+    grid-column: span 2;
+  }
 }
-
 
 /* 弹窗遮罩和内容样式 */
 .modal-mask {
   position: fixed;
   z-index: 9999;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.3);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -148,7 +156,7 @@ hr{
   background: #fff;
   border-radius: 8px;
   width: 320px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
   padding: 2rem 1.5rem 1.5rem 1.5rem;
   text-align: center;
 }
@@ -273,7 +281,9 @@ textarea {
   width: auto;
   margin: 0;
 }
-.app-footer{display:none}
+.app-footer {
+  display: none;
+}
 /* 响应式隐藏 */
 @media (max-width: 1024px) {
   .preview-section {
@@ -282,65 +292,91 @@ textarea {
 }
 
 @media (max-width: 768px) {
-  .resume-preview,.header-actions{
+  .resume-preview,
+  .header-actions {
     display: none;
   }
   .app-main {
     flex-direction: column;
   }
-  .side-nav{width: 100%;
-  background:#ddd;
-  line-height: 3;
-  h4{display:none;}
-hr{display:none;}
-}
-.resume-controls{padding: 0;}
-.control-section{display:none;}
-.control-section:first-child{display:block;padding: 0;margin: 0;}
-.nav-menu{
-  display: flex;
-  flex-direction:row;
-  .nav-item{
-    flex: 1;
-    padding:0;
+  .side-nav {
+    width: 100%;
+    background: none;
+    border-right: none;
+    line-height: 3;
+    h4 {
+      display: none;
+    }
+    hr {
+      display: none;
+    }
   }
-}
-  .app-header{
-
-    h1{
-      margin: 0 auto;
-      flex:none;
-}
+  .resume-controls {
+    width: 100vw;
+    padding: 0;
   }
-.app-footer{
-  width: 100%;
-  display: block;
-  position: fixed;
-  z-index: 9999;
-  background-color:rgba(0, 0, 0,0.1);
-   backdrop-filter: blur(10px);
-  padding: 0.5rem 0;
-  bottom: 0;
-  box-shadow: 0 -2px 4px rgba(0,0,0,0.3); /* 上阴影 */
-  .footer-actions{
+  .control-section {
+    display: none;
+  }
+  .control-section:first-child {
+    width: 100%;
+    display:block;
+    padding: 0;
+    margin: 0;
+    overflow-x: scroll;
+    overflow-y: hidden;
+  }
+  .nav-menu {
+    width: 100%;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    button{
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+    .nav-item {
+      text-align: center;
       flex: 1;
-      background:rgba(0,0,0,0)!important;
-      color: #333;
+      width: 5rem;
+      min-width: 5rem;
+      padding: 0;
     }
-    button:nth-child(2){
-      border: 1px solid #666;
-      border-bottom: none;
-      border-top: none;
-    }
-    button:last-child{
-     border: none;
-      cursor: pointer;
+  
+  .app-header {
+    h1 {
+      margin: 0 auto;
+      flex: none;
     }
   }
-}
+  .app-footer {
+    width: 100%;
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    background-color: rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 0;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.3); /* 上阴影 */
+    .footer-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      button {
+        flex: 1;
+        background: rgba(0, 0, 0, 0) !important;
+        color: #333;
+      }
+      button:nth-child(2) {
+        border: 1px solid #666;
+        border-bottom: none;
+        border-top: none;
+      }
+      button:last-child {
+        border: none;
+        cursor: pointer;
+      }
+    }
+  }
 }
