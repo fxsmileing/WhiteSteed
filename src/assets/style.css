@@ -381,4 +381,7 @@ textarea {
       }
     }
   }
+  .form-section {
+    padding:0 0 2rem 0;
+  }
 }
