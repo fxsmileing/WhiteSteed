@@ -6,7 +6,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family:宋体,Arial, sans-serif;
 }
 hr {
   border: none;
@@ -113,27 +113,34 @@ hr {
 }
 
 /* 预览区域样式 */
-
+  .resume-preview {
+    border: 1px solid red;
+     background: #fff;
+     margin: 1rem;
+     padding: 1.5rem;
+  }
 .preview-section {
-  padding: 1.5rem;
   flex: 1;
 }
 .preview-content {
-  width: 100%;
-  background: #fff;
+  width: 90%;
 
-  .resume-preview {
-    flex-grow: 1;
-  }
-  .basicInfo {
+  margin: 0 auto;
+}
+
+.resume-title {
+  text-align: center;
+  line-height: 2rem;
+  padding: 1rem 0 0 0;
+  border-bottom: 1px solid #666333;
+}
+.basicInfo {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     justify-content: space-between;
-    padding: 1rem 0 0 0;
+  line-height: 2rem;
   }
-  .form-group {
-    border-bottom: 1px solid #ddd;
-  }
+
   .basicInfo div:nth-child(7) {
     grid-column: span 2;
   }
@@ -384,4 +391,44 @@ textarea {
   .form-section {
     padding:0 0 2rem 0;
   }
+}
+
+/* 经典模板 */
+.theme-classic {
+  background: #fff;
+  color: #222;
+}
+.theme-classic .resume-title h1 {
+  color: #1890ff;
+  border-bottom: 2px solid #1890ff;
+}
+
+/* 现代简约 */
+.theme-modern {
+  background: #f8fafd;
+  color: #222;
+}
+.theme-modern .resume-title h1 {
+  color: #2ecc71;
+  border-bottom: 2px solid #2ecc71;
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  letter-spacing: 2px;
+}
+
+/* 专业商务 */
+.theme-professional {
+  background: #f4f4f4;
+  color: #222;
+}
+.theme-professional .resume-title h1 {
+  color: #333;
+  border-bottom: 2px solid #333;
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* 主题内容区通用样式 */
+.preview-content {
+  transition: background 0.3s, color 0.3s;
 }

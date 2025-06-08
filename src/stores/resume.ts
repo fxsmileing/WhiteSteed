@@ -35,6 +35,7 @@ export interface ResumeState {
   }>;
   evaluation: string;
   resumeName: string;
+  selectedTemplate: string;
 }
 
 export const useResumeStore = defineStore('resume', {
@@ -72,7 +73,8 @@ export const useResumeStore = defineStore('resume', {
       achievement: ''
     }],
     evaluation: '',
-    resumeName: '未命名简历'
+    resumeName: '未命名简历',
+    selectedTemplate: 'classic'
   }),
 
   actions: {
@@ -96,6 +98,9 @@ export const useResumeStore = defineStore('resume', {
     },
     updateResumeName(name: string) {
       this.resumeName = name
+    },
+    updateSelectedTemplate(template: string) {
+      this.selectedTemplate = template
     },
     resetAll() {
       this.$patch({
@@ -132,7 +137,8 @@ export const useResumeStore = defineStore('resume', {
           achievement: ''
         }],
         evaluation: '',
-        resumeName: '未命名简历'
+        resumeName: '未命名简历',
+        selectedTemplate: 'classic'
       })
     }
   }

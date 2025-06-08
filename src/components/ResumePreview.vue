@@ -1,8 +1,11 @@
 <template>
   <div class="resume-preview">
-    <div class="preview-content">
+    <div
+      class="preview-content"
+      :class="`theme-${store.selectedTemplate}`"
+    >
       <div class="resume-title">
-        <h1><span for="">{{ store.basicInfo.name || '未填写' }}</span><span>个人简历</span></h1>
+        <h1>{{ store.basicInfo.name ? store.basicInfo.name + '个人简历' : '未填写个人简历' }}</h1>
       </div>
 
       <section class="preview-section">

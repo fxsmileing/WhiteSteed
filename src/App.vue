@@ -68,10 +68,14 @@ const onCancel = () => {
 const exportPDF = () => {
   const element = document.querySelector('.preview-content') as HTMLElement
   if (!element) return
-  
+
+  const filename = store.basicInfo.name
+    ? `${store.basicInfo.name}个人简历.pdf`
+    : '未填写个人简历.pdf'
+
   const opt = {
     margin: 1,
-    filename: `${store.resumeName || '未命名简历'}.pdf`,
+    filename,
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2 },
     jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
@@ -82,10 +86,13 @@ const exportPDF = () => {
 
 const exportMD = () => {
   const content = convertToMarkdown(store.$state)
+  const filename = store.basicInfo.name
+    ? `${store.basicInfo.name}个人简历.md`
+    : '未填写个人简历.md'
   const blob = new Blob([content], { type: 'text/markdown;charset=utf-8;' })
   const link = document.createElement('a')
   link.href = URL.createObjectURL(blob)
-  link.download = `${store.resumeName || '未命名简历'}.md`
+  link.download = filename
   link.click()
   URL.revokeObjectURL(link.href)
 }

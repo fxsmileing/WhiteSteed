@@ -42,11 +42,10 @@ import { ref } from 'vue'
 import { useResumeStore } from '../stores/resume'
 import { storeToRefs } from 'pinia'
 
-const selectedTemplate = ref('classic')
-const themeColors = ['#2c3e50', '#3498db', '#e74c3c', '#2ecc71', '#f39c12']
-
 const store = useResumeStore()
 const { currentSection } = storeToRefs(store)
+
+const themeColors = ['#2c3e50', '#3498db', '#e74c3c', '#2ecc71', '#f39c12']
 
 const navItems = [
   { key: 'basic', label: '基本信息' },
@@ -61,6 +60,9 @@ const navItems = [
 const handleNavClick = (key: string) => {
   currentSection.value = key
 }
+
+// 直接绑定到store
+const selectedTemplate = storeToRefs(store).selectedTemplate
 
 const selectColor = (color: string) => {
   // TODO: 实现主题色切换
