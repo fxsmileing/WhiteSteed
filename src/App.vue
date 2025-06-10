@@ -1,5 +1,6 @@
 <template>
   <div class="resume-builder">
+    <!-- 头部区域 -->
     <header class="app-header">
       <h1 class="app-title">
         <img src="./assets/logo.png" alt="logo" class="app-logo" />
@@ -10,7 +11,10 @@
         <button class="export-btn export-md" @click="exportMD">导出MD</button>
         <button @click="resetForm">重置</button>
       </div>
+
     </header>
+
+    <!-- 主体内容 -->
     <main class="app-main">
       <nav class="side-nav">
         <ResumeControls />
@@ -22,16 +26,8 @@
         <ResumePreview />
       </section>
     </main>
-    <div v-if="showConfirm" class="modal-mask">
-      <div class="modal-container">
-        <div class="modal-title">提示</div>
-        <div class="modal-content">确定要重置所有内容吗？此操作不可恢复。</div>
-        <div class="modal-actions">
-          <button class="modal-btn" @click="onConfirm">确定</button>
-          <button class="modal-btn cancel" @click="onCancel">取消</button>
-        </div>
-      </div>
-    </div>
+
+    <!-- 底部操作栏 -->
     <footer class="app-footer">
       <div class="footer-actions">
         <button class="export-btn" @click="exportPDF">导出PDF</button>
@@ -39,6 +35,20 @@
         <button @click="resetForm">重置</button>
       </div>
     </footer>
+
+    <!-- 弹窗遮罩层 -->
+    <Teleport to="body">
+      <div v-if="showConfirm" class="modal-mask">
+        <div class="modal-container">
+          <div class="modal-title">提示</div>
+          <div class="modal-content">确定要重置所有内容吗？此操作不可恢复。</div>
+          <div class="modal-actions">
+            <button class="modal-btn" @click="onConfirm">确定</button>
+            <button class="modal-btn cancel" @click="onCancel">取消</button>
+          </div>
+        </div>
+      </div>
+    </Teleport>
   </div>
 </template>
 
@@ -56,9 +66,9 @@ const store = useResumeStore()
 
 const showConfirm = ref(false)
 const onConfirm = () => {
+  showConfirm.value = false
   store.resetAll()
   resumeName.value = '未命名简历'
-  showConfirm.value = false
   window.location.reload()
 }
 const onCancel = () => {
@@ -100,4 +110,10 @@ const exportMD = () => {
 const resetForm = () => {
   showConfirm.value = true
 }
+
+// Add a stub for previewResume to fix the error
+const previewResume = () => {
+  // Implement preview logic here if needed
+}
+
 </script>
