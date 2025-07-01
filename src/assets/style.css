@@ -1,16 +1,19 @@
 /* 页面基础样式 */
 * {
   box-sizing: border-box;
-}
-html,
-body {
   margin: 0;
   padding: 0;
-  font-family:宋体,Arial, sans-serif;
-  width: 100vw;
-  height: 100vh;
+  list-style: none;
+  text-decoration: none;
 }
-
+html,body {
+  font-family:宋体,Arial, sans-serif;
+}
+body{
+width: 100vw;
+overflow-x: hidden;
+line-height: 1.6;
+}
 hr {
   border: none;
   border-top: 1px solid #ddd;
@@ -29,7 +32,7 @@ hr {
   height: 3rem;
   justify-content: space-between;
   backdrop-filter: blur(10px);
-  background: rgba(0, 0, 99, 0.7);
+  background: rgba(0, 0, 0, .8);
   box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.3);
   position: sticky;
   top: 0;
@@ -102,9 +105,9 @@ hr {
   border-right: 1px solid #eee;
   background-image: linear-gradient(
     to right,
-    rgb(245, 245, 245),
-    97%,
-    rgb(230, 230, 230)
+    #e6f8fa,
+    96%,
+    #8ecdf5
   );
 }
 
@@ -243,7 +246,7 @@ hr {
 }
 
 .nav-item:hover {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .nav-item.active {
